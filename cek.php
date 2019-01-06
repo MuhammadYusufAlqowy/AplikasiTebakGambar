@@ -1,9 +1,10 @@
-<?php include_once("koneksi.php")?>
+<?php include_once("koneksi.php");?>
 <?php
     error_reporting(0);
+    session_start();
     $sesi = $_POST['sesi'];
     if(isset($_POST['jawaban'])){
-        $query = mysqli_query($koneksi,"SELECT * FROM tbsoal WHERE id_soal = ".$sesi);
+        $query = mysqli_query($koneksi,"SELECT * FROM tbsoal WHERE no_soal = ".$sesi." AND kategori = ".$_SESSION['kategori']." AND jenis = ".$_SESSION['jenis']);
         $jawaban = mysqli_fetch_array($query);
         if($_POST['jawaban'] == $jawaban['jawaban']){
             if($sesi != 4){

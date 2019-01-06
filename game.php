@@ -1,4 +1,10 @@
 
+<?php
+    session_start();    
+    if(isset($_SESSION['temp'])){
+        session_destroy();
+    }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -25,23 +31,13 @@
   
 </head>
 
-<body style="scroll-behavior=;" ng-app="myApp">
-    <div class="container-fluid">
+<body ng-app="myApp" class="p-0 m-0">
+    <div class="container-fluid p-0">
         <div class="navbar navbar-expand-sm bg-light fixed-top">
             <div class="container-fluid row">
                 <ul class="navbar-nav justify-content-start col-sm-6">
                     <li class="nav-item float-right">
                         <a class="nav-link text-danger" href="index.html" style="font-size: 18px; font-weight: bold"><i class="fas fa-home"></i>Menu Utama </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav justify-content-end col-sm-6">
-                    <li class="nav-item">
-                        <a class="nav-link text-danger" href="" onclick="history.back()" style="font-size: 18px; font-weight: bold"><i class="fas fa-arrow-left"></i>
-                            Kembali </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-danger" href="" onclick="history.forward(+1)" style="font-size: 18px; font-weight: bold"> Lanjut
-                            <i class="fas fa-arrow-right"></i></a>
                     </li>
                 </ul>
             </div>

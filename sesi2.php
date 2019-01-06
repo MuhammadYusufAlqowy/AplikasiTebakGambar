@@ -1,48 +1,37 @@
-<?php include_once("koneksi.php") ?>
+<?php 
+    include_once("koneksi.php");
+    session_start();
+ ?>
 <!-- sesi -->
-        <div class="container text-warning text-center pt-5" id="sesi2" >
+        <div class="text-warning text-center pt-5" id="sesi2" >
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <?php 
-                    $query = mysqli_query($koneksi,@"SELECT * FROM tbsoal where id_soal = 1");
-                    while ($fetch = mysqli_fetch_array($query)) {
+                    $query = mysqli_query($koneksi,"SELECT * FROM tbsoal where no_soal = 1 AND kategori = ".$_SESSION['kategori']." AND jenis = ".$_SESSION['jenis']);
+                    $fetch = mysqli_fetch_array($query);
+                    $query = mysqli_query($koneksi,"SELECT * FROM deskripsi_gambar where no_soal = 1 AND kategori = ".$_SESSION['kategori']);
+                    $deskripsi = mysqli_fetch_assoc($query);
                     ?>
-                        <h3 class="m-3"><?php echo $fetch['deskripsi']; ?> </h3>
-                    <?php    
-                     }
-                    ?>
+                    <h3 class="text-soal bg-light"><?php echo $fetch['deskripsi']; ?> </h3>
                 </div>
             </div>
             <form action="cek.php" method="POST">
-                <div class="row p-3 mt-3 mx-auto h-50" style="width: 600px; height: 300px;">
-                    <div class="col-sm-6 col-md-6 ">
-                        <button type="submit" class="btn btn-outline-warning p-0 m-0" name="jawaban" value="d" style="width:250px;">
-                            <img src="https://img.icons8.com/color/480/000000/creek.png" alt="" style="height: 150px; width: 150px;">
-                            <h2>Sungai</h2>
+                <div class="row p-3 mt-5 mx-auto w-100">
+                    <?php
+                        $query = mysqli_query($koneksi,"SELECT * FROM gambar_jawaban where kategori = ".$_SESSION['kategori']." AND deskripsi = '".$deskripsi['deskripsi']."'");
+                        while ($result = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                    ?>
+                    <div class="col-sm-12 col-md-12 pt-3">
+                        <button type="submit" class="btn btn-outline-warning p-0 m-0" name="jawaban" value="<?php echo $result['nama'];?>">
+                            <img src="<?php echo $result['path'];?>" alt="">
+                            <h2 class="text-capitalize"><?php echo $result['nama'];?></h2>
                         </button>
                     </div>
-                    <div class="col-sm-6 col-md-6">
-                         <button type="submit" class="btn btn-outline-warning p-0 m-0" name="jawaban" value="d" style="width:250px;">
-                            <img src="https://img.icons8.com/color/480/000000/cave.png" alt="" style="height: 150px; width: 150px;">
-                            <h2>Gua</h2>
-                        </button>
-                    </div>
+                    <?php
+                        }
+                    ?>
                 </div>
-                <div class="row p-3 mt-3 mx-auto h-50" style="width: 600px; height: 300px;">
-                    <div class="col-sm-6 col-md-6 ">
-                         <button type="submit" class="btn btn-outline-warning p-0 m-0" name="jawaban" value="hutan" style="width:250px;">
-                            <img src="https://img.icons8.com/color/480/000000/nature.png" alt="" style="height: 150px; width: 150px;">
-                            <h2>Hutan</h2>
-                        </button>
-                    </div>
-                    <div class="col-sm-6 col-md-6">
-                         <button type="submit" class="btn btn-outline-warning p-0 m-0" name="jawaban" value="d" style="width:250px;">
-                            <img src="https://img.icons8.com/color/480/000000/forest.png" alt="" style="height: 150px; width: 150px;">
-                            <h2>Pohon</h2>
-                        </button>
-                    </div>
-                </div>
-                 <input type="hidden" name="sesi" value="1">
+                <input type="hidden" name="sesi" value="1">
             </form>
         </div>
         <!-- sesi -->

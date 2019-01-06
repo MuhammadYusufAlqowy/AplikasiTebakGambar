@@ -7,55 +7,42 @@
                         Menu Utama </a>
                 </li>
             </ul>
-            <ul class="navbar-nav justify-content-end col-sm-6">
-                <li class="nav-item">
-                    <a class="nav-link text-danger" href="#!play-game" style="font-size: 18px; font-weight: bold"><i
-                            class="fas fa-arrow-left"></i>
-                        Kembali </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-danger" href="#!play-game" style="font-size: 18px; font-weight: bold">
-                        Lanjut
-                        <i class="fas fa-arrow-right"></i></a>
-                </li>
-            </ul>
         </div>
 
     </div>
-    <div class="container text-warning text-center">
+    <div class="container-fluid text-warning text-center pt-3">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h3 class="m-3">PILIH KATEGORI</h3>
+                <h3 class="">PILIH KATEGORI</h3>
             </div>
         </div>
-        <div class="row p-3 mt-3 mx-auto h-50" style="width: 600px; height: 300px;">
-            <div class="col-sm-6 col-md-6 ">
-                <div class="border border-danger rounded" onclick="window.location.href = ''">
-                    <img src="https://img.icons8.com/color/480/000000/rice-bowl.png" class="btn" alt="" style="height: 150px; width: 150px;">
-                    <h2>Makanan</h2>
+        <form action="generateSoal.php" method="POST">
+            <div class="row p-3 mx-auto w-100">
+                <div class="col-sm-12 col-md-12 pt-3">
+                    <button type="submit" class="btn btn-outline-warning p-0 m-0" name="btnKategori" value="1">
+                        <img src="https://img.icons8.com/color/480/000000/rice-bowl.png" class ="p-3" alt="">
+                        <h2 class="text-capitalize">makanan</h2>
+                    </button>
+                </div>
+                <div class="col-sm-12 col-md-12 pt-3">
+                    <button type="submit" class="btn btn-outline-warning p-0 m-0" name="btnKategori" value="2">
+                        <img src="https://img.icons8.com/color/480/000000/elephant.png" class ="p-3" alt="">
+                        <h2 class="text-capitalize">hewan</h2>
+                    </button>
+                </div>
+                <div class="col-sm-12 col-md-12 pt-3">
+                    <button type="submit" class="btn btn-outline-warning p-0 m-0" name="btnKategori" value="3">
+                        <img src="https://img.icons8.com/color/480/000000/deciduous-tree.png" class ="p-3" alt="">
+                        <h2 class="text-capitalize">tumbuhan</h2>
+                    </button>
+                </div>
+                <div class="col-sm-12 col-md-12 pt-3">
+                    <button type="submit" class="btn btn-outline-warning p-0 m-0" name="btnKategori" value="4">
+                        <img src="https://img.icons8.com/color/480/000000/fiat-500.png" class ="p-3" alt="">
+                        <h2 class="text-capitalize">kendaraan</h2>
+                    </button>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="border border-danger rounded" onclick="window.location.href = '#!sesi1'">
-                    <img src="https://img.icons8.com/color/480/000000/elephant.png" class="btn" alt="" style="height: 150px; width: 150px;">
-                    <h2>Hewan</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row p-3 mt-3 mx-auto h-50" style="width: 600px; height: 300px;">
-            <div class="col-sm-6 col-md-6 ">
-                <div class="border border-danger rounded">
-                    <img src="https://img.icons8.com/color/480/000000/deciduous-tree.png" class="btn" alt="" style="height: 150px; width: 150px;">
-                    <h2>Tumbuhan</h2>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-                <div class="border border-danger rounded">
-                    <img src="https://img.icons8.com/color/480/000000/fiat-500.png" class="btn" alt="" style="height: 150px; width: 150px;">
-                    <h2>Kendaraan</h2>
-                </div>
-            </div>
-        </div>
-
+        </form>
     </div>
 </div>

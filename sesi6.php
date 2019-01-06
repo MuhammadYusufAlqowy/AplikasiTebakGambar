@@ -1,10 +1,13 @@
-<?php include_once("koneksi.php") ?>
+<?php
+    include_once("koneksi.php");
+    session_start();
+?>
 <!-- sesi -->
     <div class="container text-warning text-center pt-5">
         <div class="row">
             <div class="col-sm-12 text-center">
                 <?php 
-                $query = mysqli_query($koneksi,@"SELECT * FROM tbsoal where id_soal = 5");
+                $query = mysqli_query($koneksi,@"SELECT * FROM tbsoal where no_soal = 5 AND kategori = ".$_SESSION['kategori']." AND jenis = ".$_SESSION['jenis']);
                 while ($fetch = mysqli_fetch_array($query)) {
                 ?>
                     <h3 class="m-3"><?php echo $fetch['deskripsi']; ?> </h3>
