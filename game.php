@@ -1,9 +1,13 @@
 
 <?php
-    session_start();    
-    if(isset($_SESSION['temp'])){
-        session_destroy();
-    }
+    ob_start();
+    if(isset($_SESSION)){
+        session_start();    
+            if(isset($_SESSION['temp'])){
+                session_destroy();
+            }
+        }
+    ob_flush();
 ?>
 
 <!DOCTYPE html>
