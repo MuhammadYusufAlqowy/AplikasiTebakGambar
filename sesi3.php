@@ -12,7 +12,7 @@
                      $query = mysqli_query($koneksi,"SELECT * FROM deskripsi_gambar where no_soal = 2 AND kategori = ".$_SESSION['kategori']);
                     $deskripsi = mysqli_fetch_assoc($query);
                     ?>
-                        <h3 class="text-soal bg-light"><?php echo $fetch['deskripsi']; ?> </h3>
+                        <h3 class="text-soal bg-white text-warning"><?php echo $fetch['deskripsi']; ?> </h3>
                 </div>
             </div>
             <form action="cek.php" method="POST">

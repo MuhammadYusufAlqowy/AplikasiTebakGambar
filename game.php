@@ -37,11 +37,11 @@
 
 <body ng-app="myApp" class="p-0 m-0">
     <div class="container-fluid p-0">
-        <div class="navbar navbar-expand-sm bg-light fixed-top">
+        <div class="navbar navbar-expand-sm bg-warning fixed-top">
             <div class="container-fluid row">
                 <ul class="navbar-nav justify-content-start col-sm-6">
                     <li class="nav-item float-right">
-                        <a class="nav-link text-danger" href="index.html" style="font-size: 18px; font-weight: bold"><i class="fas fa-home"></i>Menu Utama </a>
+                        <a class="nav-link text-white m-2" href="index.html" style="font-size: 18px; font-weight: bold"><i class="fas fa-home"></i> &ensp; Menu Utama </a>
                     </li>
                 </ul>
             </div>

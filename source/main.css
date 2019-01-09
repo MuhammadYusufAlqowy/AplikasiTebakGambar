@@ -47,10 +47,13 @@ body{
 
 .text-soal{
     position: fixed;
-    top: 50px;
+    top: 70px;
     padding: 10px;
     width: 100%;
     z-index: 99;
+}
+.text-head{
+        font-size: 60px;
 }
 
 #id-anim{ animation-timing-function: ease-in-out;}
